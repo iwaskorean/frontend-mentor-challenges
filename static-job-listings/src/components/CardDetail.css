@@ -1,0 +1,73 @@
+.card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    margin: 5rem 0;
+    padding: 2rem 2.5em;
+    border-radius: 0.5rem;
+    box-shadow: 3px 5px 15px rgba(204, 197, 197, 0.616);
+}
+
+.card.featured {
+    border-left: 10px solid var(--DesaturatedDarkCyan);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.company-logo {
+    width: 140px;
+    height: 140px;
+    margin-right: 1rem;
+}
+
+.detail > * {
+    margin: 1rem 0;
+}
+.detail > * > * {
+    margin: 0 0.5rem;
+}
+
+.detail__company {
+    display: flex;
+    align-items: center;
+}
+.detail__company-name {
+    color: var(--DesaturatedDarkCyan);
+    /* color: var(--DarkGrayishCyan); */
+}
+.detail__company-new, 
+.detail__company-fetatured {
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    padding-top: 0.4rem;
+    border-radius: 10px;
+    text-align: center;
+    /* font-weight: 500; */
+}
+.detail__company-new {
+    background-color: var(--DesaturatedDarkCyan);
+    min-width: 75.5px;
+}
+.detail__company-fetatured {
+    background-color: var(--VeryDarkGrayishCyan);
+}
+
+.detail__position-name {
+    font-size: 1.5rem;
+    color: var(--DesaturatedDarkCyan);
+}
+
+.detail__contract {
+    display: flex;
+    color: var(--DarkGrayishCyan);
+    font-weight: 500;
+}
+.detail__contract-dot {
+    font-weight: 800;
+}
