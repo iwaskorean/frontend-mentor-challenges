@@ -3,11 +3,12 @@ import './Job.css';
 
 const Job = ({ job, addKeywords }) => {
     const keywords = [job.role, job.level, ...job.languages, ...job.tools];
-
+    console.log(job.company);
+    
     return (
         <div className={job.featured ? "card featured" : "card"}>
             <div className="profile">
-                <img className="company-logo" src={`../images/${job.company}.svg`} alt="err" />
+                <img className="company-logo" src={`./images/${job.company}.svg`} alt="err" />
                 <div className="detail">
                     <div className="detail__company">
                         <div className="detail__company-name">
