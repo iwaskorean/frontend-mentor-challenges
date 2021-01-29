@@ -19,6 +19,7 @@
 .item-container {
     width: auto;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
 }
 
@@ -59,6 +60,9 @@
 
 .button-clear {
     color: var(--DesaturatedDarkCyan);
+    margin: 0.5rem 0rem;
+    cursor: pointer;
+    z-index:10;
 }
 .button-clear:hover {
     text-decoration: underline;

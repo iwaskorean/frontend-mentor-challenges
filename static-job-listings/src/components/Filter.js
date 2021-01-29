@@ -3,8 +3,6 @@ import FilterItems from './FilterItems';
 import './Filter.css';
 
 const Filter = ({ keywords, removeKeywords, clearKeywords }) => {
-    console.log(keywords);
-    
     return (
         <div className="filter">
             <div className="item-container">

@@ -12,10 +12,7 @@ const App = () => {
         if(keywords) {
             const filtredUser = data.filter(user => {
                 return keywords.every(term => {
-                    return (
-                        user.role === term || user.level === term || 
-                        user.languages.includes(term) || user.tools.includes(term)
-                    )
+                    return user.role === term || user.level === term || user.languages.includes(term) || user.tools.includes(term);
                 } )
             });
             setJobs(filtredUser);
@@ -29,8 +26,6 @@ const App = () => {
     }
 
     const addKeywords = keyword => {
-        console.log(keywords);
-        
         if(!keywords.includes(keyword)) {
             setKeywords([...keywords, keyword]);
         }

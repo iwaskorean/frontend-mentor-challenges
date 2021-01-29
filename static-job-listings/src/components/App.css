@@ -50,3 +50,43 @@ html {
     margin-top: calc(10vw + 2rem) ;
     z-index: 1;
 }
+
+@media(max-width:800px) {
+    html {
+        font-size: 14px;
+    }
+    .header__bg {
+        height: 25vw;
+        background: no-repeat url('../images/bg-header-desktop.svg') 0% 0%;
+        background-color: var(--DesaturatedDarkCyan);
+        background-size: cover;
+    }
+    .container {
+        margin-top: calc(25vw + 2rem) ;
+    }
+    .card {
+        flex-wrap: wrap;
+    }
+    .keywords {
+        width: 100%;
+        justify-content: flex-start;
+        border-top: 1px var(--VeryDarkGrayishCyan) solid;
+        padding-top: 1rem;
+        margin-top: 1rem;
+    }
+    .profile {
+        display: block;
+    }
+    .detail__company {
+        flex-wrap: wrap;
+    }
+    .detail__company > * {
+        margin: 0.2rem 0rem;
+        margin-right: 0.5rem;
+    }
+    .company-logo {
+        width: 5rem;
+        height: 5rem;
+        margin-top: -4.5rem;
+    }
+}

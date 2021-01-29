@@ -26,6 +26,9 @@
     margin-right: 1rem;
 }
 
+.detail {
+    width: 100%;
+}
 .detail > * {
     margin: 1rem 0;
 }
