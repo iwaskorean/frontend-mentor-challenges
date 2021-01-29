@@ -60,14 +60,44 @@
 
 .detail__position-name {
     font-size: 1.5rem;
+    color: var(--VeryDarkGrayishCyan);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.detail__position-name:hover{
     color: var(--DesaturatedDarkCyan);
 }
 
 .detail__contract {
     display: flex;
+    align-items: center;
     color: var(--DarkGrayishCyan);
     font-weight: 500;
+    text-align:center;
 }
 .detail__contract-dot {
     font-weight: 800;
+}
+
+.keywords {
+    display: flex;
+    width: 40%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.keyword {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    color: var(--DesaturatedDarkCyan);
+    background-color:var(--Background);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.keyword:hover {
+    color: var(--Background);
+    background-color: var(--DesaturatedDarkCyan);
+    cursor: pointer;
 }

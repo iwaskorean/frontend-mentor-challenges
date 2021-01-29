@@ -1,10 +1,21 @@
 import React from 'react';
+import FilterItems from './FilterItems';
+import './Filter.css';
 
-const Filter = ({ item }) => {
+const Filter = ({ keywords, removeKeywords, clearKeywords }) => {
+    console.log(keywords);
+    
     return (
-        <div>
-            {item}
-        </div>    
+        <div className="filter">
+            <div className="item-container">
+                {keywords.map((keyword, idx) => (
+                    <FilterItems key={idx} keyword={keyword} removeKeywords={removeKeywords} />
+                ))}
+            </div>
+            <div className="button-clear" onClick={clearKeywords}>
+                Clear
+            </div>
+         </div> 
     );
 };
 

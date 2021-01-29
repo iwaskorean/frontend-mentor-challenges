@@ -1,0 +1,65 @@
+.filter {
+    width: 85%;
+    height: auto;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    margin-top: 7vw;
+    z-index: 2;
+    border-radius: 0.5rem;
+    box-shadow: 3px 5px 15px rgba(204, 197, 197, 0.616);
+}
+
+.item-container {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.item-box {
+    display: flex;
+    align-items: center;
+}
+
+.item {
+    height: 2rem; 
+    color: var(--DesaturatedDarkCyan);
+    background-color: var(--Background);
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.button-remove {
+    background-color: var(--DesaturatedDarkCyan);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    transition: all 0.3s;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+.button-remove:hover {
+    background-color: var(--VeryDarkGrayishCyan);
+}
+
+.button-remove img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.button-clear {
+    color: var(--DesaturatedDarkCyan);
+}
+.button-clear:hover {
+    text-decoration: underline;
+}
