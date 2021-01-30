@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+$font-family: Poppins, sans-serif;
+
+$cyan : hsl(180, 66%, 49%);
+$dark-violet: hsl(257, 27%, 26%);
+$red : hsl(0, 87%, 67%);
+$gray: hsl(0, 0%, 75%);
+$grayish-violet: hsl(257, 7%, 63%);
+$very-dark-blue: hsl(255, 11%, 22%);
+$very-dark-violet: hsl(260, 8%, 14%);
+
+%flex-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%button-default {
+    border: none;
+    color: #fff;
+    background-color: $cyan;
+    font-weight: 800;
+    cursor: pointer;
+    outline: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 1rem;
+    transition: all 0.3s;
+    &:hover {
+        background-color: hsl(180, 81%, 75%);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 18px;
+    font-family: $font-family;
+    font-weight: 500;
+}
+
+.wrapper {
+    overflow: hidden;
+    @extend %flex-centered;
+    flex-direction: column;
+    .button-cyan {
+        @extend %button-default;
+    }
+    .title {
+        font-weight: 700;
+        color: $very-dark-violet;
+    }
+    .text {
+        color: $grayish-violet;
+    }
+// Header
+    header {
+        width: 85%;
+        margin: 1rem 0;
+        @extend %flex-centered;
+        justify-content: space-between;  
+        font-size: 0.8rem; 
+        .header__box-left, .header__box-right {
+            @extend %flex-centered;
+            font-weight: 700;
+            .header__nav {
+                color: $grayish-violet;
+                margin: 0 1rem;
+                cursor: pointer;
+                transition: all 0.3s;
+                &:hover {
+                    color: $very-dark-violet;
+                }
+            }
+        }
+        .header__box-left {
+            .image-logo {
+                width: 8rem;
+                margin-right: 1rem;
+                cursor: pointer;
+            }
+        }
+        .header__box-right {
+            .button-cyan {
+                margin-left: 1rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+    }
+
+// Intro Section
+    .section__intro {
+        height: auto;
+        width: 85%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 50% 50%;
+        grid-gap: 1rem;
+        margin: 2rem 0;
+        padding: 2.5rem 0;
+        .container__typo {
+            .title {
+                font-size: 3.5rem;
+                line-height: 1.1;
+            }
+            .text {
+                margin-bottom: 1rem;
+                font-size: 1.2rem;
+            }
+            .button-cyan {
+                margin: 1rem 0;
+                font-size: 1.1rem;
+                border-radius: 1.5rem;
+            }
+        }
+        .container__image{
+            .image-hero {
+                max-width: 40rem;
+                margin-left: 2rem;
+            }
+        }
+    }
+
+// Main Section
+    .section__main {
+        width: 100%;
+        // height: 100vh; // @@@ 수정해야함
+        background-color: rgba($color: #ebe7ec, $alpha: 1.0);
+        @extend %flex-centered;
+        flex-direction: column;
+        .title{
+            font-size: 2rem;
+            margin-top: 5rem;
+        }
+        .text {
+            width: 50%;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .container__cards {
+            width: 85%;
+            background: linear-gradient(to bottom, #ebe7ec 50%, $cyan 50% 55%, #ebe7ec 55% 100%);
+            display: grid;
+            grid-template-columns: repeat(3, 30%);
+            align-items: center;
+            justify-content: space-between;
+            margin: 2rem 0;
+            margin-bottom: 5rem;
+            .card {
+                background-color: #fff;
+                padding: 2rem;
+                height: 65%;
+                border-radius: 10px;
+                box-shadow: 1px 1px 5px rgba(214, 214, 214, 0.788);
+                &:nth-child(2) {
+                    margin-top: 4rem;
+                }
+                &:nth-child(3) {
+                    margin-top: 8rem;
+                }
+                .card-icon {
+                    @extend %flex-centered;
+                    width: 5rem;
+                    height: 5rem;
+                    margin-top: -5rem;
+                    background-color: $dark-violet;
+                    border-radius: 100%;
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                    }
+                }
+                .title {
+                    font-size: 1.5rem;
+                    margin: 1rem 0;
+                }
+                .text {
+                    width: 100%;
+                    text-align: left;
+                    margin: 1rem 0;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+    }
+// footer section
+    .footer {
+        width: 100%;
+        background: no-repeat url('./components/images/bg-boost-desktop.svg');
+        background-size: cover;
+        background-color: $dark-violet;
+        color: #fff;
+        .footer__boost {
+            @extend %flex-centered;
+            flex-direction: column;
+            margin: 3rem;
+            .footer__boost-heading {
+                color: #fff;
+                font-weight: 700;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            .button-cyan{
+                font-size: 1.1rem;
+                border-radius: 1.5rem;
+            }
+        }
+        .footer__main {
+            width: 100%;
+            padding: 3rem 2rem;
+            padding-left: 0;
+            background-color: $very-dark-violet;
+            display: grid;
+            grid-template-columns: 30% auto auto auto auto;
+            .logo-box {
+                justify-self: center;
+                .logo{
+                    width: 8rem;
+                    cursor: pointer;
+                    filter:  invert(100%) sepia(13%) saturate(7490%) hue-rotate(179deg) brightness(112%) contrast(101%);
+                }
+            }
+            .nav {
+                margin: 0 1rem;
+                .nav-heading {
+                    font-weight: 700;
+                }
+                .nav-text {
+                    color: $grayish-violet;
+                    margin: 0.7rem 0;
+                    &:hover {
+                        cursor: pointer;
+                        color: $cyan;
+                    }
+                }
+            }
+        }   
+    }
+}
+
