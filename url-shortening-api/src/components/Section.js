@@ -1,4 +1,5 @@
 import React from 'react';
+import InputBar from './InputBar';
 
 const Section = ({ alt }) => {
     return (
@@ -17,7 +18,9 @@ const Section = ({ alt }) => {
                     <img className="image-hero" src="./images/illustration-working.svg"  alt={alt} />
                 </div>
             </div>
+
             <div className="section__main">
+                <InputBar />
                 <div className="title">
                     Advanced Statistics
                 </div>

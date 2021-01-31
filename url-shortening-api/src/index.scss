@@ -100,6 +100,7 @@ html {
         grid-template-columns: 50% 50%;
         grid-gap: 1rem;
         margin: 2rem 0;
+        margin-bottom: 4rem;
         padding: 2.5rem 0;
         .container__typo {
             .title {
@@ -131,6 +132,93 @@ html {
         background-color: rgba($color: #ebe7ec, $alpha: 1.0);
         @extend %flex-centered;
         flex-direction: column;
+        
+        .section__form {
+            width: 85%;
+            display: grid;
+            grid-template-columns: 1fr 10rem;
+            grid-gap: 1rem;
+            padding: 2.5rem 2rem;
+            margin-top: -4rem;
+            background: no-repeat url('./components/images/bg-shorten-desktop.svg');
+            background-size: cover;
+            background-color: $dark-violet;
+            border-radius: 1rem;
+
+            input {
+                width: 100%;
+                border-radius: 5px;
+                padding-left: 1rem;
+                border: none;
+                outline:none;
+                &::placeholder {
+                    color: $gray;
+                    opacity: 0.8;
+                    // font-weight: 700;
+                    font-size: 0.7rem;
+                }
+            }
+            input.error {
+                border: 2px solid $red;
+                &::placeholder {
+                    color: $red;
+                    opacity: 0.8;
+                }
+            }
+            .button-cyan {
+                border-radius: 5px;
+                height: 50px;
+                font-size: 1.1rem;
+            }
+            .valid-error {
+                color: $red;
+                font-weight: 400;
+                font-style: italic;
+                margin-bottom: -1rem;
+            }
+        }
+        
+        .result-container {
+            width: 85%;
+            // padding: 0.5rem 1rem;
+            // display: flex;
+            // flex-wrap: wrap;
+            // align-items: center;
+            background-color: #fff;
+            margin: 1rem 0;
+            border-radius: 1rem;
+            // padding: 1rem;
+            .result-box {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                // margin: 1rem 0;
+                .url-client {
+                    margin: 1rem;
+                }
+                .url-shorten {
+                    margin-left: auto;
+                    margin-right: 1rem;
+                    color: $cyan;
+                }
+                .button-copy {
+                    @extend %button-default;
+                    padding: 0.5rem 1rem;
+                    font-weight: 600;
+                    font-size: 1rem;
+                    border-radius: 5px;
+                    margin-right: 1rem;
+                }
+                .loading {
+                    margin: 1rem;
+                    width: 100%;
+                    font-style: italic;
+                    text-align: center;
+                }
+            }
+
+        }
+        
         .title{
             font-size: 2rem;
             margin-top: 5rem;
