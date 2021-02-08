@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@500;700&display=swap');
+
+$grayish-blue: hsl(237, 18%, 59%);
+$soft-red: hsl(345, 33%, 40%);
+$soft-red-light: hsla(345, 84%, 62%, 0.836);
+
+$white: hsl(0, 0%, 100%);
+$card-1: hsl(240, 24%, 21%);
+$card-2: hsl(236, 19%, 31%);
+$very-dark-blue: hsl(235, 16%, 14%);
+$very-dark-black-blue: hsl(234, 17%, 12%);
+$tablet: 768px;
+$mobile: 500px;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 14px;
+  @media (max-width: $tablet) {
+    font-size: 8px;
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('./components/images/bg-stars.svg');
+  background: no-repeat url('./components/images/pattern-hills.svg') 0% 100%,
+    url('./components/images/bg-stars.svg');
+  background-size: 100% 20%;
+  background-color: $very-dark-blue;
+
+  .heading {
+    color: $white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.6rem;
+    margin: 2rem 1rem;
+    margin-bottom: 5rem;
+    @media (max-width: $mobile) {
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  .container {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 23% 23% 23% 23%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    margin-bottom: 10rem;
+    @media (max-width: $tablet) {
+      width: 90%;
+    }
+    .item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card-box {
+        width: 15vw;
+        height: 15vw;
+        background-color: $very-dark-black-blue;
+        border-radius: 0.5rem;
+        .card {
+          width: 15vw;
+          height: 14vw;
+          border-radius: 0.5rem;
+          display: flex;
+          .card-top {
+            width: 15vw;
+            height: 14vw;
+            position: absolute;
+            background-color: $card-1;
+            border-radius: 0.5rem;
+          }
+          .card-bottom {
+            width: 15vw;
+            height: 14vw;
+            position: absolute;
+            background-color: $card-2;
+            border-radius: 0.5rem;
+          }
+        }
+        .count {
+          font-size: 8vw;
+          align-self: center;
+          margin: 0 auto;
+          color: $soft-red-light;
+          font-weight: 700;
+          z-index: 2;
+        }
+        .circle {
+          width: 1vw;
+          height: 2vw;
+          background-color: $very-dark-black-blue;
+          position: absolute;
+          margin-top: 6vw;
+          &.circle-left {
+            border-bottom-right-radius: 2vw;
+            border-top-right-radius: 2vw;
+          }
+          &.circle-right {
+            margin-left: 14vw;
+            border-bottom-left-radius: 2vw;
+            border-top-left-radius: 2vw;
+          }
+        }
+      }
+    }
+    .card-name {
+      color: $grayish-blue;
+      font-size: 1.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+      margin-top: 1rem;
+      @media (max-width: 1000px) {
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
+  width: 10rem;
+  a {
+    display: flex;
+    justify-content: space-between;
+    .icon {
+      width: 2rem;
+      &:hover {
+        color: $soft-red;
+        cursor: pointer;
+        filter: invert(9%) sepia(82%) saturate(3934%) hue-rotate(308deg)
+          brightness(86%) contrast(114%);
+      }
+    }
+  }
+}
