@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+$soft-blue: hsl(231, 69%, 60%);
+$soft-red: hsl(0, 94%, 66%);
+$grayish-blue: hsl(229, 8%, 60%);
+$very-dark-blue: hsl(229, 31%, 21%);
+
+%flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%desktop-width {
+  width: 80%;
+}
+
+@mixin grid-container($c1, $c2) {
+  display: grid;
+  grid-template-columns: $c1 $c2;
+  align-items: center;
+}
+
+@mixin hover-soft-red {
+  transition: all 0.3s;
+  &:hover {
+    cursor: pointer;
+    color: $soft-red;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+button {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+}
+
+.wrapper {
+  @extend %flex-centered;
+  flex-direction: column;
+}
