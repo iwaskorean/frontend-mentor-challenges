@@ -1,0 +1,57 @@
+@import './base';
+@import './components';
+
+.tabs {
+  @extend %desktop-width;
+  @extend %flex-centered;
+  flex-direction: column;
+  margin: 5rem 0;
+
+  .tabs__menu {
+    @extend %flex-centered;
+    margin-bottom: 1.5rem;
+    .tab {
+      color: $grayish-blue;
+      padding: 1.5rem;
+      font-weight: 500;
+      border-bottom: 2px solid rgb(197, 197, 197);
+      cursor: pointer;
+      &.active {
+        color: $very-dark-blue;
+        border-bottom: 5px solid $soft-red;
+      }
+      &:hover {
+        color: $very-dark-blue;
+      }
+    }
+  }
+  .tab__container {
+    display: none;
+    margin: 1.5rem 0;
+    &.active {
+      display: grid;
+      @include grid-container(50%, 50%);
+    }
+
+    &::before {
+      content: '';
+      width: 40%;
+      height: 15rem;
+      position: absolute;
+      left: 0;
+      z-index: -1;
+      background-color: $soft-blue;
+      border-top-right-radius: 7rem;
+      border-bottom-right-radius: 7rem;
+      margin-top: 15vw;
+    }
+    .tab__hero {
+      width: 100%;
+    }
+    .tab__content {
+      & > * {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

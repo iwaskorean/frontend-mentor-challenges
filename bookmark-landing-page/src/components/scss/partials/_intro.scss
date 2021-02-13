@@ -1,0 +1,51 @@
+@import './base';
+@import './components';
+
+.intro {
+  @extend %desktop-width;
+  @include grid-container(45%, 55%);
+  .intro__content {
+    .button-get {
+      margin: 0.2rem;
+      margin-right: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      padding: 0.8rem 1.3rem;
+      font-weight: 500;
+      box-shadow: 2px 2px 5px rgba(117, 117, 117, 0.4);
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      &.chrome {
+        background-color: $soft-blue;
+        color: #fff;
+      }
+      &.firefox {
+        background-color: rgba(238, 238, 238, 0.76);
+        color: $very-dark-blue;
+      }
+      &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .intro__hero {
+    .image-hero {
+      width: 100%;
+      margin-left: 3rem;
+    }
+    &::before {
+      content: '';
+      width: 30%;
+      height: 17rem;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+      background-color: $soft-blue;
+      border-top-left-radius: 7rem;
+      border-bottom-left-radius: 7rem;
+      margin-top: 12vw;
+    }
+  }
+}
