@@ -2,34 +2,39 @@
 @import './components';
 
 .intro {
-  @extend %desktop-width;
+  @extend %section-width;
   @include grid-container(45%, 55%);
   .intro__content {
     .button-get {
       margin: 0.2rem;
       margin-right: 0.5rem;
-      border: none;
       border-radius: 5px;
       padding: 0.8rem 1.3rem;
       font-weight: 500;
       box-shadow: 2px 2px 5px rgba(117, 117, 117, 0.4);
       font-size: 0.9rem;
+      outline: 0;
       transition: all 0.3s;
+      cursor: pointer;
       &.chrome {
         background-color: $soft-blue;
         color: #fff;
+        border: 2px solid $soft-blue;
+        &:hover {
+          background-color: #fff;
+          color: $soft-blue;
+        }
       }
       &.firefox {
+        border: none;
         background-color: rgba(238, 238, 238, 0.76);
         color: $very-dark-blue;
-      }
-      &:hover {
-        cursor: pointer;
-        opacity: 0.8;
+        &:hover {
+          opacity: 0.8;
+        }
       }
     }
   }
-
   .intro__hero {
     .image-hero {
       width: 100%;
@@ -46,6 +51,32 @@
       border-top-left-radius: 7rem;
       border-bottom-left-radius: 7rem;
       margin-top: 12vw;
+    }
+  }
+
+  @media (max-width: $breakpoint-1) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+    grid-gap: 2rem;
+    .intro__hero {
+      width: 80%;
+      order: -1;
+      .image-hero {
+        margin-left: 0rem;
+      }
+      @media (max-width: $breakpoint-2) {
+        width: 90%;
+      }
+      &::before {
+        width: 70%;
+        height: 15rem;
+        margin-top: 15vw;
+        @media (max-width: $breakpoint-2) {
+          width: 80%;
+          height: 12rem;
+        }
+      }
     }
   }
 }

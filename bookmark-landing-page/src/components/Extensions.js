@@ -17,7 +17,9 @@ const Extensions = () => {
           />
           <div className="title">Add to Chrome</div>
           <div className="version">Minimum version 62</div>
-          <button className="button-add">Add & Install Extension</button>
+          <a href="https://chrome.google.com/webstore/search/bookmark%20manager">
+            <button className="button-add">Add & Install Extension</button>
+          </a>
         </div>
         <div className="card">
           <img
@@ -27,7 +29,9 @@ const Extensions = () => {
           />
           <div className="title">Add to Firefox</div>
           <div className="version">Minimum version 55</div>
-          <button className="button-add">Add & Install Extension</button>
+          <a href="https://addons.mozilla.org/ko/firefox/extensions/">
+            <button className="button-add">Add & Install Extension</button>
+          </a>
         </div>
         <div className="card">
           <img
@@ -37,7 +41,9 @@ const Extensions = () => {
           />
           <div className="title">Add to Opera</div>
           <div className="version">Minimum version 46</div>
-          <button className="button-add">Add & Install Extension</button>
+          <a href="https://addons.opera.com/ko/extensions/">
+            <button className="button-add">Add & Install Extension</button>
+          </a>
         </div>
       </div>
     </div>

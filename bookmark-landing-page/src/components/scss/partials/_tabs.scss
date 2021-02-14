@@ -2,7 +2,7 @@
 @import './components';
 
 .tabs {
-  @extend %desktop-width;
+  @extend %section-width;
   @extend %flex-centered;
   flex-direction: column;
   margin: 5rem 0;
@@ -24,6 +24,15 @@
         color: $very-dark-blue;
       }
     }
+    @media (max-width: $breakpoint-1) {
+      flex-direction: column;
+      width: 90%;
+      .tab {
+        border-bottom: 2px solid rgb(197, 197, 197);
+        text-align: center;
+        width: 90%;
+      }
+    }
   }
   .tab__container {
     display: none;
@@ -31,6 +40,21 @@
     &.active {
       display: grid;
       @include grid-container(50%, 50%);
+      @media (max-width: $breakpoint-1) {
+        grid-template-columns: 1fr;
+        justify-content: center;
+        text-align: center;
+        grid-gap: 2rem;
+        .tab__hero {
+          margin: 0 auto;
+          width: 70%;
+        }
+        .tab__content {
+          & > * {
+            margin-left: 0rem;
+          }
+        }
+      }
     }
 
     &::before {
@@ -44,6 +68,10 @@
       border-top-right-radius: 7rem;
       border-bottom-right-radius: 7rem;
       margin-top: 15vw;
+      @media (max-width: $breakpoint-2) {
+        width: 70%;
+        height: 10rem;
+      }
     }
     .tab__hero {
       width: 100%;

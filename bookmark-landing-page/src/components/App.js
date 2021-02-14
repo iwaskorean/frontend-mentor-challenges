@@ -6,6 +6,7 @@ import Extensions from './Extensions';
 import Accordion from './Accordion';
 
 import './scss/main.scss';
+import Footer from './Footer';
 
 const App = () => {
   const tabs = [
@@ -58,6 +59,7 @@ const App = () => {
       <Tabs tabs={tabs} />
       <Extensions />
       <Accordion accordion={accordion} />
+      <Footer />
     </div>
   );
 };

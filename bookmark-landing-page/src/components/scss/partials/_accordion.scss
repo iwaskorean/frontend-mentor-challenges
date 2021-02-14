@@ -2,7 +2,7 @@
 @import './components';
 
 .accordion {
-  @extend %desktop-width;
+  @extend %section-width;
   @extend %flex-centered;
   flex-direction: column;
   .button-more {
@@ -10,6 +10,9 @@
   }
   .accordion__container {
     width: 70%;
+    @media (max-width: $breakpoint-1) {
+      width: 100%;
+    }
     margin: 2rem 0;
     .title {
       font-size: 1.1rem;
@@ -24,7 +27,6 @@
       &:nth-child(7) {
         border-bottom: 1.5px solid rgb(214, 214, 214);
       }
-
       &.active {
         color: $soft-red;
         .icon--arrow {

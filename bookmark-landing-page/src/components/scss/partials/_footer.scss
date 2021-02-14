@@ -1,2 +1,147 @@
 @import './base';
 @import './components';
+
+.footer {
+  margin-top: 4rem;
+  width: 100%;
+  @extend %flex-centered;
+  flex-direction: column;
+  .contact__container {
+    @extend %flex-centered;
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem 1rem;
+    background-color: $soft-blue;
+    color: #fff;
+    text-align: center;
+    .contact__text {
+      font-size: 0.9rem;
+      letter-spacing: 0.2rem;
+      text-transform: uppercase;
+      margin: 1.5rem 0;
+    }
+    .contact__heading {
+      width: 40%;
+      font-size: 1.7rem;
+      font-weight: 500;
+      margin: 1.5rem 0;
+      letter-spacing: 0.1rem;
+    }
+    .alert {
+      color: #fff;
+      background-color: $soft-red;
+      padding: 0.5rem 1rem;
+      margin-top: -1rem;
+      width: 40%;
+      border-radius: 5px;
+      font-size: 0.8rem;
+      text-align: left;
+      font-style: italic;
+      min-width: 22rem;
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+    .form {
+      width: 40%;
+      @extend %flex-centered;
+      margin: 1.5rem 1rem;
+      .input-email {
+        flex: 1;
+        margin-right: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        border: none;
+        font-size: 0.9rem;
+        outline: 0;
+        box-shadow: 0 0 0 0px $soft-red inset;
+        &::placeholder {
+          color: rgb(184, 184, 184);
+          font-size: 0.85rem;
+        }
+        &.active {
+          box-shadow: 0 0 0 3px $soft-red inset;
+          background: no-repeat url('../images/icon-error.svg') 95% 50%;
+          background-color: #fff;
+          background-size: 1.5rem;
+        }
+      }
+      .button-contact {
+        &.active {
+          box-shadow: 0 0 0 3px $soft-red inset;
+          background-color: #fff;
+          color: $soft-red;
+        }
+      }
+    }
+  }
+
+  .footer__container {
+    @extend %flex-centered;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem 4rem;
+    background-color: $very-dark-blue;
+    .footer__navs {
+      @extend %flex-centered;
+      .logo--white {
+        width: 11rem;
+        margin-right: 1.5rem;
+        cursor: pointer;
+      }
+      .footer_nav {
+        text-transform: uppercase;
+        color: rgb(201, 201, 201);
+        margin: 0 1.5rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        &:hover {
+          color: $soft-red;
+        }
+      }
+    }
+  }
+  @media (max-width: $breakpoint-1) {
+    .contact__container {
+      .contact__heading {
+        width: 80%;
+      }
+      .alert {
+        width: 80%;
+        margin-top: -1.5rem;
+        text-align: center;
+      }
+      .form {
+        width: 80%;
+        flex-direction: column;
+        .input-email {
+          width: 100%;
+          margin-right: 0;
+        }
+        .button-contact {
+          width: 100%;
+          margin: 1rem 0;
+        }
+      }
+    }
+    .footer__container {
+      flex-direction: column;
+      .footer__navs {
+        flex-direction: column;
+        .logo--white {
+          margin-right: 0rem;
+          margin: 1.5rem 0;
+        }
+        .footer_nav {
+          margin: 1.5rem 0.5rem;
+        }
+      }
+      .icon-github {
+        margin-top: 2rem;
+      }
+    }
+  }
+}

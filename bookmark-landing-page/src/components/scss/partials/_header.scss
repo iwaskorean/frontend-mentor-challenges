@@ -2,19 +2,26 @@
 @import './components';
 
 .header {
-  @extend %desktop-width;
+  @extend %section-width;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 3rem 0.5rem;
+  @media (max-width: $breakpoint-1) {
+    margin: 2rem 0.5rem;
+  }
   .header__logo {
     width: 11rem;
+    cursor: pointer;
   }
   .header__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 50%;
+    @media (max-width: $breakpoint-1) {
+      display: none;
+    }
     .header__nav {
       @include hover-soft-red;
       margin-left: 1rem;
@@ -25,12 +32,75 @@
         padding: 0.5rem 1.3rem;
         border-radius: 10px;
         border: 1.5px solid $soft-red;
-        margin-left: 1.4rem;
+        // margin-left: 1.4rem;
         &:hover {
           box-shadow: 1px 1px 5px rgba(117, 117, 117, 0.4);
           background-color: #fff;
           color: $soft-red;
         }
+      }
+    }
+  }
+  .button-hamburger {
+    font-size: 2.5rem;
+    margin-top: -5px;
+    transition: all 0.3s;
+    display: none;
+    @media (max-width: $breakpoint-1) {
+      display: block;
+    }
+  }
+  .modal__menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    padding: 2rem 1rem;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    min-height: 400px;
+    color: #fff;
+    background-color: hsla(231, 59%, 13%, 0.97);
+    z-index: 10;
+    margin-top: -100vh;
+    transition: all 0.3s;
+    &.active {
+      display: flex;
+      margin-top: 0vh;
+    }
+    .modal__header {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      .logo-modal {
+        width: 10rem;
+      }
+      .icon-close {
+        width: 1.5rem;
+      }
+    }
+    .modal__nav {
+      width: 90%;
+      font-size: 1.4rem;
+      text-align: center;
+      padding: 1.5rem 0;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-top: 0.5px solid rgb(194, 194, 194);
+      cursor: pointer;
+      &.contact {
+        border-bottom: 0.5px solid rgb(194, 194, 194);
+      }
+      &.login {
+        width: 90%;
+        border: 2px solid #fff;
+        border-radius: 3px;
+        margin-top: 2rem;
       }
     }
   }

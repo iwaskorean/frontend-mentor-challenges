@@ -2,7 +2,7 @@
 @import './components';
 
 .extensions {
-  @extend %desktop-width;
+  @extend %section-width;
   @extend %flex-centered;
   flex-direction: column;
   margin: 5rem 0;
@@ -46,6 +46,17 @@
       .button-add {
         margin: 1rem 0;
         margin-top: 4rem;
+      }
+    }
+    @media (max-width: $breakpoint-1) {
+      grid-template-columns: 85%;
+      .card {
+        &:nth-child(2) {
+          margin-top: 0rem;
+        }
+        &:nth-child(3) {
+          margin-top: 0rem;
+        }
       }
     }
   }

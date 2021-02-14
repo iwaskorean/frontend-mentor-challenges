@@ -5,14 +5,20 @@ $soft-red: hsl(0, 94%, 66%);
 $grayish-blue: hsl(229, 8%, 60%);
 $very-dark-blue: hsl(229, 31%, 21%);
 
+$breakpoint-1: 768px;
+$breakpoint-2: 500px;
+
 %flex-centered {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-%desktop-width {
+%section-width {
   width: 80%;
+  @media (max-width: $breakpoint-1) {
+    width: 90%;
+  }
 }
 
 @mixin grid-container($c1, $c2) {
@@ -29,6 +35,37 @@ $very-dark-blue: hsl(229, 31%, 21%);
   }
 }
 
+@mixin button-normal {
+  border: none;
+  border-radius: 5px;
+  outline: 0;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin button-type-1 {
+  border-radius: 5px;
+  outline: 0;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  background-color: $soft-blue;
+  border: 2px solid $soft-blue;
+  &:hover {
+    background-color: #fff;
+    color: $soft-blue;
+  }
+}
+
+// init
 * {
   box-sizing: border-box;
   margin: 0;
@@ -39,6 +76,12 @@ html,
 button {
   font-family: 'Rubik', sans-serif;
   font-size: 18px;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+  @media (max-width: $breakpoint-2) {
+    font-size: 14px;
+  }
 }
 
 .wrapper {
