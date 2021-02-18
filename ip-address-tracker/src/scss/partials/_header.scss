@@ -1,0 +1,48 @@
+@import './base';
+
+.header {
+  width: 100%;
+  @extend %flex-centered;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: no-repeat url('../images/pattern-bg.png') 0% 0%;
+  background-size: cover;
+  .heading {
+    @include font-size-weight-color(2rem, 500, $white);
+    text-align: center;
+    margin: 1.5rem 1rem;
+  }
+  .search-bar {
+    width: 50%;
+    text-align: center;
+    margin-bottom: 7rem;
+    @extend %flex-centered;
+    .input {
+      @include border-outline-zero;
+      @extend %flex-centered;
+      flex: 1;
+      height: 100%;
+      padding: 1rem 1.2rem;
+      @include font-size-weight-color(1rem, 500, $very-dark-gray);
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+      &::placeholder {
+        @include font-size-weight-color(1rem, 500, $dark-gray);
+      }
+    }
+    .button-arrow {
+      @extend %flex-centered;
+      @include border-outline-zero;
+      height: 100%;
+      padding: 1.2rem;
+      background-color: #000;
+      border-top-right-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      cursor: pointer;
+      img {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+    }
+  }
+}
