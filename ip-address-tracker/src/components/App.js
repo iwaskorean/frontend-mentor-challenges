@@ -13,8 +13,14 @@ const App = () => {
   }, []);
 
   const getAddress = async () => {
-    const response = await ipify.get();
-    setAddress(response.data.ip);
+    await ipify
+      .get()
+      .then((response) => {
+        setAddress(response.data.ip);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (

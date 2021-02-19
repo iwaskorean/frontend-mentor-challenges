@@ -5,7 +5,9 @@ const Header = ({ address, setAddress }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setAddress(input);
+    if (input) {
+      setAddress(input);
+    }
   };
 
   return (

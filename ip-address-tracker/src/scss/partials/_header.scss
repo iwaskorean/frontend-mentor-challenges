@@ -11,11 +11,18 @@
     @include font-size-weight-color(2rem, 500, $white);
     text-align: center;
     margin: 1.5rem 1rem;
+    @media (max-width: $breakpoint-1) {
+      margin-top: 3rem;
+    }
   }
   .search-bar {
     width: 50%;
     text-align: center;
     margin-bottom: 7rem;
+    @media (max-width: $breakpoint-1) {
+      margin-bottom: 18rem;
+      width: 80%;
+    }
     @extend %flex-centered;
     .input {
       @include border-outline-zero;
@@ -39,9 +46,16 @@
       border-top-right-radius: 0.5rem;
       border-bottom-right-radius: 0.5rem;
       cursor: pointer;
+      transition: all 0.3s;
       img {
         width: 0.8rem;
         height: 0.8rem;
+      }
+      &:hover {
+        background-color: blue;
+        @media (max-width: $breakpoint-1) {
+          background-color: #000;
+        }
       }
     }
   }

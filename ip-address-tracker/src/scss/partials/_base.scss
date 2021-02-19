@@ -3,6 +3,8 @@
 $very-dark-gray: hsl(0, 0%, 17%);
 $dark-gray: hsl(0, 0%, 59%);
 $white: #fff;
+// $breakpoint-1: 768px;
+$breakpoint-1: 600px;
 
 %flex-centered {
   display: flex;
@@ -41,8 +43,9 @@ button {
 }
 
 .wrapper {
-  min-height: 100vh;
+  height: 100vh;
   @extend %flex-centered;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 }

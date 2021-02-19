@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import geo from '../apis/geo';
+import Maps from './Maps';
 
 const Results = ({ address }) => {
-  const [location, setLocation] = useState({});
-  const [isp, setIsp] = useState('');
+  const [result, setResult] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    setLocation({});
-    setIsp('');
+    setLoading(false);
     getGeo(address);
   }, [address]);
 
@@ -19,8 +19,8 @@ const Results = ({ address }) => {
         },
       })
       .then((response) => {
-        setLocation(response.data.location);
-        setIsp(response.data.isp);
+        setResult(response.data);
+        setLoading(true);
       })
       .catch((err) => {
         console.log(err);
@@ -40,24 +40,25 @@ const Results = ({ address }) => {
         <div className="result">
           <div className="heading">location</div>
           <div className="text">
-            {location.city && location.region
-              ? `${location.city}, ${location.region}`
+            {loading
+              ? `${result.location.city}, ${result.location.region}`
               : loadingEl}
           </div>
         </div>
         <div className="result">
           <div className="heading">Time zone</div>
           <div className="text">
-            {location.timezone && location.country
-              ? `${location.country} ${location.timezone}`
+            {loading
+              ? `${result.location.country} ${result.location.timezone}`
               : loadingEl}
           </div>
         </div>
         <div className="result">
           <div className="heading">ISP</div>
-          <div className="text">{isp ? isp : loadingEl}</div>
+          <div className="text">{loading ? result.isp : loadingEl}</div>
         </div>
       </div>
+      <Maps result={result} />
     </div>
   );
 };

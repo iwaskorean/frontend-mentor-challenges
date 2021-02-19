@@ -1,0 +1,19 @@
+@import './base';
+
+.map {
+  .marker.temporary-marker {
+    background: no-repeat url('../images/icon-location.svg');
+    background-size: contain;
+    width: 2rem;
+    height: 3rem;
+    filter: invert(21%) sepia(94%) saturate(6404%) hue-rotate(358deg)
+      brightness(93%) contrast(121%);
+  }
+
+  .loading-map {
+    text-align: center;
+    margin-top: 30vh;
+    font-style: italic;
+    color: $white;
+  }
+}
