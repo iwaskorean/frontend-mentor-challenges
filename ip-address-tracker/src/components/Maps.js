@@ -1,35 +1,34 @@
 import React from 'react';
-import ReactMapGL, { Marker } from 'react-map-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
+import GoogleMapReact from 'google-map-react';
+import { API_KEY } from '../apis/map';
+
+const Marker = () => (
+  <div>
+    <img className="marker" src="./images/icon-location.svg" alt="asdf" />
+  </div>
+);
 
 const Maps = ({ result }) => {
-  const KEY =
-    'pk.eyJ1IjoiaGFuLWtvciIsImEiOiJja2xjOGMxdmowbjJ0Mm9wMGc5NTNxZjNvIn0.aiUatewh0jNs4_KT87lGxA';
-
   const renderedMap = () => {
     if (result) {
-      const viewport = {
-        latitude: result.location.lat,
-        longitude: result.location.lng,
-        width: '100vw',
-        height: '70vh',
-        zoom: 12,
+      const location = {
+        lat: result.location.lat,
+        lng: result.location.lng,
       };
       return (
-        <ReactMapGL
-          {...viewport}
-          mapboxApiAccessToken={KEY}
-          mapStyle="mapbox://styles/mapbox/streets-v11"
-          // onViewportChange={(viewport) => {
-          //   setViewport(viewport);
-          // }}
+        <GoogleMapReact
+          bootstrapURLKeys={{ key: API_KEY, language: 'en' }}
+          defaultCenter={location}
+          center={location}
+          defaultZoom={15}
+          options={{
+            panControl: false,
+            mapTypeControl: false,
+            scrollwheel: false,
+          }}
         >
-          {viewport && (
-            <Marker longitude={viewport.longitude} latitude={viewport.latitude}>
-              <div className="marker temporary-marker"></div>
-            </Marker>
-          )}
-        </ReactMapGL>
+          <Marker lat={result.location.lat} lng={result.location.lng} />
+        </GoogleMapReact>
       );
     } else {
       return <h1 className="loading-map"> loading ...</h1>;

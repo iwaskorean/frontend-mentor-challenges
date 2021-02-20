@@ -1,13 +1,20 @@
 @import './base';
 
 .map {
-  .marker.temporary-marker {
-    background: no-repeat url('../images/icon-location.svg');
-    background-size: contain;
-    width: 2rem;
-    height: 3rem;
-    filter: invert(21%) sepia(94%) saturate(6404%) hue-rotate(358deg)
-      brightness(93%) contrast(121%);
+  width: 100vw;
+  height: 80vh;
+  @media (max-width: 1024px) {
+    height: 70vh;
+  }
+  @media (max-width: $breakpoint-1) {
+    height: 80vh;
+  }
+  .marker {
+    width: 1.7rem;
+    height: 2.1rem;
+    opacity: 0.8;
+    filter: invert(14%) sepia(98%) saturate(7129%) hue-rotate(3deg)
+      brightness(93%) contrast(124%);
   }
 
   .loading-map {
