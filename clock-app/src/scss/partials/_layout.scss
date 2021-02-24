@@ -1,0 +1,24 @@
+@import './quote';
+@import './clock';
+@import './buttonMore';
+@import './detail';
+
+.wrapper {
+  height: 100vh;
+  background: no-repeat url(../assets/bg-image-nighttime-desktop.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &.active {
+    justify-content: flex-end;
+  }
+}
+
+.layout {
+  margin: 2rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow: hidden;
+}

@@ -1,0 +1,38 @@
+@import './base';
+
+.clock {
+  .clock__header {
+    display: flex;
+    align-items: center;
+
+    .clock__header__icon {
+      width: 2rem;
+      margin-right: 1rem;
+    }
+    .clock__header__text {
+      @include font-size-color-weight(1.3rem, $color-white, $weight-light);
+      text-transform: uppercase;
+      letter-spacing: 5px;
+    }
+  }
+
+  .clock__time {
+    display: flex;
+    align-items: flex-end;
+    .clock__time__time {
+      height: auto;
+      @include font-size-color-weight(8.5rem, $color-white, $weight-bold);
+      margin-right: 2rem;
+    }
+    .clock__time__abbr {
+      @include font-size-color-weight(2.5rem, $color-white, $weight-light);
+      margin-bottom: 1rem;
+    }
+  }
+
+  .clock__location {
+    @include font-size-color-weight(1.5rem, $color-white, $weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+}

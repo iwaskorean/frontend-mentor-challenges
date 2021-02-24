@@ -1,0 +1,61 @@
+@import './base';
+
+.quote {
+  width: 45%;
+  height: auto;
+  display: none;
+  align-items: flex-start;
+  margin: 2rem 5rem;
+  &.active {
+    display: flex;
+    animation: quoteDown 1s forwards;
+  }
+  .quote__container {
+    flex: 1;
+    .quote__container__text {
+      @include font-size-color-weight(1rem, $color-white, $weight-light);
+      line-height: 1.5;
+      animation: quoteAnimation 1s forwards;
+    }
+    .quote__container__author {
+      @include font-size-color-weight(1.1rem, $color-white, $weight-bold);
+      margin-top: 1rem;
+      animation: quoteAnimation 1s forwards;
+    }
+  }
+  .quote__button--refresh {
+    @extend %button-normal;
+    background: none;
+    border: none;
+    margin: 0 1rem;
+    transition: all 0.3s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    img {
+      width: 1.5rem;
+    }
+  }
+}
+
+@keyframes quoteAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes quoteDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

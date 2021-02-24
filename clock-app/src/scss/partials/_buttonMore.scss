@@ -1,0 +1,26 @@
+@import './base';
+
+.button--more {
+  @include font-size-color-weight(1.2rem, $color-dark-gray, $weight-bold);
+  @extend %button-normal;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color-white;
+  width: 10rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  .icon--arrow {
+    width: 2rem;
+    height: 2rem;
+    background: no-repeat url('../assets/icon-arrow-up.svg');
+    background-size: 100%;
+    transition: all 0.8s;
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+$color-black: #000;
+$color-dark-gray: #303030;
+$color-white: #fff;
+$weight-bold: 700;
+$weight-light: 300;
+$weight-regular: 400;
+
+@mixin font-size-color-weight($size, $color, $weight) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}
+
+%button-normal {
+  cursor: pointer;
+  outline: 0;
+  border: none;
+}
+
+// init
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+button {
+  font-family: 'Inter', sans-serif;
+  color: $color-white;
+  font-size: 18px;
+}
+
+// hide scroll
+body {
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
