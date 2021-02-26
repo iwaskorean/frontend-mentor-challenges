@@ -1,8 +1,14 @@
 import React from 'react';
 
-const Detail = ({ detailActive, timeData }) => {
+const Detail = ({ detailActive, timeData, dayActive }) => {
   return (
-    <div className={`${detailActive ? 'detail active' : 'detail'}`}>
+    <div
+      className={`${
+        detailActive
+          ? `detail active ${dayActive && 'day'}`
+          : `detail ${dayActive && 'day'}`
+      }`}
+    >
       <div className="detail__contents">
         <p className="detail__contents__heading">Current Timezone</p>
         <p className="detail__contents__text">{timeData.timezone}</p>

@@ -13,6 +13,10 @@
       @include font-size-color-weight(1.3rem, $color-white, $weight-light);
       text-transform: uppercase;
       letter-spacing: 5px;
+      @media (max-width: $breakpoint-mobile) {
+        @include font-size-color-weight(1.3rem, $color-white, $weight-light);
+        letter-spacing: 2px;
+      }
     }
   }
 

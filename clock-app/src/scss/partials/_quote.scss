@@ -6,6 +6,10 @@
   display: none;
   align-items: flex-start;
   margin: 2rem 5rem;
+  @media (max-width: $breakpoint-tablet) {
+    margin: 2rem 3rem;
+    width: 70%;
+  }
   &.active {
     display: flex;
     animation: quoteDown 1s forwards;
@@ -16,11 +20,17 @@
       @include font-size-color-weight(1rem, $color-white, $weight-light);
       line-height: 1.5;
       animation: quoteAnimation 1s forwards;
+      @media (max-width: $breakpoint-tablet) {
+        @include font-size-color-weight(1.8rem, $color-white, $weight-light);
+      }
     }
     .quote__container__author {
       @include font-size-color-weight(1.1rem, $color-white, $weight-bold);
       margin-top: 1rem;
       animation: quoteAnimation 1s forwards;
+      @media (max-width: $breakpoint-tablet) {
+        @include font-size-color-weight(1.9rem, $color-white, $weight-bold);
+      }
     }
   }
   .quote__button--refresh {
@@ -34,6 +44,10 @@
     }
     img {
       width: 1.5rem;
+      @media (max-width: $breakpoint-mobile) {
+        width: 2rem;
+        margin-top: 0.5rem;
+      }
     }
   }
 }

@@ -4,13 +4,16 @@ const Quote = ({ detailActive, alertMsg }) => {
   const [quote, setQuote] = useState({});
 
   useEffect(() => {
-    getQuote(Math.floor(Math.random() * 500));
+    getQuote();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getQuote = async (idx) => {
-    return await (await fetch('https://type.fit/api/quotes'))
+  const getQuote = async () => {
+    return await (await fetch('https://api.kanye.rest'))
       .json()
-      .then((response) => setQuote(response[idx]))
+      .then((response) => {
+        setQuote(response);
+      })
       .catch((err) => {
         console.log(err);
         alert(alertMsg);
@@ -22,16 +25,14 @@ const Quote = ({ detailActive, alertMsg }) => {
       {quote && (
         <>
           <div className="quote__container">
-            <p className="quote__container__text">"{quote.text}"</p>
-            <p className="quote__container__author">
-              {!quote.author ? 'Unknown Author' : quote.author}
-            </p>
+            <p className="quote__container__text">"{quote.quote}"</p>
+            <p className="quote__container__author">{quote && 'Kanye West'}</p>
           </div>
           <button
             className="quote__button--refresh"
             onClick={() => {
               setQuote(null);
-              getQuote(Math.floor(Math.random() * 500));
+              getQuote();
             }}
           >
             <img src="./assets/icon-refresh.svg" alt="" />

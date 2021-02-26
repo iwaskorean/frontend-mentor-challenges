@@ -12,7 +12,14 @@
   border-radius: 2rem;
   letter-spacing: 5px;
   text-transform: uppercase;
-
+  transition: all 0.3s;
+  &:hover {
+    opacity: 0.85;
+  }
+  @media (max-width: $breakpoint-tablet) {
+    width: 11rem;
+    margin-top: 2rem;
+  }
   .icon--arrow {
     width: 2rem;
     height: 2rem;
@@ -21,6 +28,9 @@
     transition: all 0.8s;
     &.active {
       transform: rotate(180deg);
+    }
+    @media (max-width: $breakpoint-tablet) {
+      background-size: cover;
     }
   }
 }

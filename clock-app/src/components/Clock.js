@@ -7,7 +7,6 @@ const Clock = ({ location, timeData, setDetailActive, detailActive }) => {
       const hour = timeData.datetime.substr(11, 2);
       const minute = timeData.datetime.substr(14, 2);
       let daypart = '';
-
       if (hour < 6) {
         daypart = 'night';
       } else if (hour >= 6 && hour < 12) {
