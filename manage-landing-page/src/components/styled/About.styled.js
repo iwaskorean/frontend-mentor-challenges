@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
-  margin: 4rem 0;
+  margin: 5rem 0;
 
   .about__heading {
     padding-right: 10rem;
@@ -29,6 +29,26 @@ export const Wrapper = styled.div`
         border-radius: 1rem;
         text-align: center;
         margin-right: 1rem;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+    grid-template-columns: 1fr;
+    text-align: center;
+    .about__heading {
+      padding-right: 0rem;
+    }
+    .about__detail {
+      & > p {
+        margin: 1.5rem;
+      }
+      .about__detail__heading {
+        background-color: #ffeade;
+        border-radius: 1rem;
+        & > p {
+          flex: 1;
+        }
       }
     }
   }

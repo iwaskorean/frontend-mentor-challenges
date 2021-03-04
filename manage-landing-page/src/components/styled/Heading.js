@@ -5,6 +5,9 @@ export const HeadingLarge = styled.p`
   color: var(--very-dark-blue);
   font-weight: 700;
   line-height: 1.1;
+  @media (max-width: 500px) {
+    font-size: 3rem;
+  }
 `;
 
 export const HeadingMedium = styled.p`

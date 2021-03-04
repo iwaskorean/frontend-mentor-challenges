@@ -14,11 +14,12 @@
 | Bookmark Landing Page        |       React, SCSS       |   *[URL](https://bookmark-landing-page-snowy.vercel.app/)*   |
 | Room Hompage                 |         JS, CSS         |       *[URL](https://room-homepage-lemon.vercel.app/)*       |
 | IP Address Tracker           |    React, SCSS, APIs    |   *[URL](https://ip-address-tracker-gold-six.vercel.app/)*   |
+| Manage Landing Page          | React, Styled-componets |  *[URL](https://manage-landing-page-chi-seven.vercel.app)*   |
 | Clock App                    |    React, SCSS, APIs    |         *[URL](https://clock-app-self.vercel.app/)*          |
 |                              |                         |                                                              |
 |                              |                         |                                                              |
 
 
 
-* You can grap this challenge [HERE.](https://www.frontendmentor.io/challenges)
+* You can grap this challenge [HERE](https://www.frontendmentor.io/challenges)
 

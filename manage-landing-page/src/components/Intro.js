@@ -10,14 +10,27 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 40% 60%;
   grid-gap: 1rem;
-  margin: 4rem 0;
+  margin: 5rem 0;
   align-items: center;
 
   .intro__hero {
     justify-self: flex-end;
     .intro__hero__img {
-      width: 100%;
+      width: 80%;
       margin-left: 4rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    grid-template-columns: 1fr;
+    text-align: center;
+    .intro__hero {
+      justify-self: center;
+      order: -1;
+      .intro__hero__img {
+        margin-left: 0rem;
+      }
     }
   }
 `;

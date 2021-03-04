@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './styled/Button';
 import { SimplifyWrapper, Wrapper } from './styled/Footer.styled';
 
@@ -16,6 +16,22 @@ const Simplify = () => {
 };
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+  const [alert, setAlert] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (regExp.test(email)) {
+      setAlert(false);
+      setSuccess(true);
+    } else {
+      setAlert(true);
+    }
+  };
+
   return (
     <>
       <Simplify></Simplify>
@@ -47,10 +63,24 @@ const Footer = () => {
             <p>Privacy Policy</p>
           </div>
           <div className="input_box">
-            <div className="form">
-              <input placeholder="Updates in your inbox"></input>
+            <form className="form" onSubmit={(e) => onSubmit(e)}>
+              <input
+                className={alert ? 'input active' : 'input'}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Updates in your inbox"
+              />
               <button className="button-submit">Go</button>
-            </div>
+              {alert ? (
+                <p className="message alert">Please insert valid email</p>
+              ) : (
+                success && (
+                  <p className="message primary">
+                    We sent you an email. Check your inbox
+                  </p>
+                )
+              )}
+            </form>
             <p className="copylight">Copyright 2020. All Rights Reserved</p>
           </div>
         </div>
