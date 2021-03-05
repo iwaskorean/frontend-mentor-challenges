@@ -1,0 +1,28 @@
+@import './base';
+
+.item {
+  width: 100%;
+  padding: 0.3rem 0;
+  border-bottom: 1.5px solid $light-grayish-blue-lighter;
+  label {
+    @include flex-d-a-j(row, center, space-between);
+    .item__text {
+      flex: 1;
+      cursor: pointer;
+      @include font-size-color-weight(
+        1.3rem,
+        $light-grayish-blue-superdark,
+        $font-weight-light
+      );
+    }
+    .icon--cross {
+      width: 1rem;
+      margin: 0 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.checkbox {
+  cursor: pointer;
+}

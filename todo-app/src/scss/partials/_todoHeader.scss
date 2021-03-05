@@ -1,0 +1,44 @@
+@import './base';
+
+.header {
+  width: 100%;
+  @include flex-d-a-j(column, center, center);
+
+  .header__heading {
+    width: 100%;
+    margin-bottom: 2rem;
+    @include flex-d-a-j(row, center, space-between);
+    p {
+      @include font-size-color-weight(2.5rem, $light-gray, $font-weight-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+    .icon--daypart {
+      width: 1.7rem;
+      cursor: pointer;
+    }
+  }
+
+  .header__form {
+    width: 100%;
+    @include flex-d-a-j(row, flex-start, flex-start);
+    .input {
+      width: 100%;
+      padding: 1.2rem 0.3rem;
+      outline: 0;
+      border: none;
+      @include font-size-color-weight(
+        1.3rem,
+        $light-grayish-blue-superdark,
+        $font-weight-light
+      );
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      &::placeholder {
+        color: $light-grayish-blue;
+        font-style: italic;
+        font-size: 1rem;
+      }
+    }
+  }
+}

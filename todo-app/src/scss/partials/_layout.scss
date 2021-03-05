@@ -1,0 +1,58 @@
+@import './base';
+@import './todoHeader';
+@import './todoList';
+@import './todoListItem';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+button,
+input {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+}
+
+input {
+  font-size: 1.3rem;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100vh;
+  @include flex-d-a-j(column, center, flex-start);
+  background: no-repeat url('../assets/bg-desktop-light.jpg');
+  // background-size: 100% 35%;
+  background-color: $light-gray;
+}
+
+.container {
+  width: 40%;
+  @include flex-d-a-j(column, center, flex-start);
+  margin: 3rem;
+}
+
+.checkbox__container {
+  width: 3.7rem;
+  height: 3.7rem;
+  background-color: #fff;
+  @include flex-d-a-j(row, center, center);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  .checkbox {
+    width: 1.6rem;
+    height: 1.6rem;
+    @include flex-d-a-j(row, center, center);
+    border-radius: 50%;
+    background-color: $light-grayish-blue-lighter;
+    .check {
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  }
+}
