@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import TodoHeader from './TodoHeader';
+import Header from './Header';
 import TodoList from './TodoList';
-import { AddTodo, Todo, ToggleTodo } from './types/types';
+import {
+  AddTodo,
+  Todo,
+  ToggleTodo,
+  RemoveTodo,
+  ClearComplete,
+} from './types/types';
 
 // scss
 import '../scss/main.scss';
@@ -34,13 +40,7 @@ const App: React.FC = () => {
 
   const toggleTodo: ToggleTodo = (selected) => {
     const newTodo = todos.map((todo) => {
-      if (todo === selected) {
-        return {
-          ...todo,
-          complete: !todo.complete,
-        };
-      }
-      return todo;
+      return todo === selected ? { ...todo, complete: !todo.complete } : todo;
     });
     setTodos(newTodo);
   };
@@ -56,11 +56,30 @@ const App: React.FC = () => {
     ]);
   };
 
+  const removeTodo: RemoveTodo = (selected) => {
+    const newTodo = todos.filter((todo) => {
+      return todo !== selected && { ...todo };
+    });
+    setTodos(newTodo);
+  };
+
+  const clearComplete: ClearComplete = () => {
+    const newTodo = todos.filter((todo) => {
+      return !todo.complete && { ...todo };
+    });
+    setTodos(newTodo);
+  };
+
   return (
     <div className="wrapper">
       <div className="container">
-        <TodoHeader addTodo={addTodo} />
-        <TodoList todos={todos} toggleTodo={toggleTodo} />
+        <Header addTodo={addTodo} />
+        <TodoList
+          todos={todos}
+          toggleTodo={toggleTodo}
+          removeTodo={removeTodo}
+          clearComplete={clearComplete}
+        />
       </div>
     </div>
   );

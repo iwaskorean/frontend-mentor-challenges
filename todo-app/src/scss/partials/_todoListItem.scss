@@ -10,19 +10,31 @@
       flex: 1;
       cursor: pointer;
       @include font-size-color-weight(
-        1.3rem,
+        1.2rem,
         $light-grayish-blue-superdark,
         $font-weight-light
       );
+      transition: color 0.8s;
+      &.completed {
+        @include font-size-color-weight(
+          1.2rem,
+          $light-grayish-blue-lighter,
+          $font-weight-light
+        );
+        text-decoration: line-through $light-grayish-blue-lighter;
+      }
+      &:hover {
+        opacity: 0.75;
+      }
     }
     .icon--cross {
       width: 1rem;
       margin: 0 1rem;
       cursor: pointer;
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
-}
-
-.checkbox {
-  cursor: pointer;
 }

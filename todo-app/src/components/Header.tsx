@@ -11,7 +11,11 @@ const TodoHeader: React.FC<AddTodoProps> = ({ addTodo }) => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!newTodo.trim()) {
+      return;
+    }
     addTodo(newTodo);
+    setNewTodo('');
   };
 
   return (
@@ -30,7 +34,7 @@ const TodoHeader: React.FC<AddTodoProps> = ({ addTodo }) => {
           className="input"
           type="text"
           value={newTodo}
-          placeholder="Enter new things ..."
+          placeholder="Enter new things to do ..."
           onChange={(e) => setNewTodo(e.target.value)}
         />
       </form>

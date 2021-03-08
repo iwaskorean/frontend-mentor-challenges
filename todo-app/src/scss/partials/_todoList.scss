@@ -1,11 +1,64 @@
 @import './base';
 
-.list {
+.list__container {
+  background-color: #fff;
+  margin-top: 1.5rem;
+  box-shadow: 1px 3px 15px rgba(126, 126, 126, 0.3);
   width: 100%;
   border-radius: 5px;
-  margin-top: 1.5rem;
-  background-color: #fff;
-  box-shadow: 1px 3px 15px rgba(126, 126, 126, 0.3);
-  list-style: none;
-  overflow-y: auto;
+  animation: listAni 0.5s forwards;
+
+  .list {
+    max-height: 50vh;
+    list-style: none;
+    overflow-y: scroll;
+  }
+
+  .list__navs {
+    width: 100%;
+    background-color: #fff;
+    @include flex-d-a-j(row, center, space-between);
+    flex-wrap: wrap;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    & > * {
+      @include font-size-color-weight(
+        0.9rem,
+        $light-grayish-blue-dark,
+        $font-weight-light
+      );
+      margin: 1.5rem 0.5rem;
+    }
+    .nav {
+      cursor: pointer;
+      transition: all 0.3s;
+      &.active {
+        color: $bright-blue;
+        &:hover {
+          color: $bright-blue;
+        }
+      }
+      &:hover {
+        color: $light-grayish-blue-superdark;
+      }
+    }
+    .list__navs__filter {
+      @include flex-d-a-j(row, center, space-between);
+      .nav {
+        margin: 0 0.3rem;
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}
+
+@keyframes listAni {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

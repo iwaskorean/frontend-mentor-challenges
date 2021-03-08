@@ -3,6 +3,7 @@
 .header {
   width: 100%;
   @include flex-d-a-j(column, center, center);
+  animation: headerAni 0.8s forwards;
 
   .header__heading {
     width: 100%;
@@ -22,13 +23,25 @@
   .header__form {
     width: 100%;
     @include flex-d-a-j(row, flex-start, flex-start);
+    .checkbox {
+      transition: none;
+      cursor: initial;
+      .check {
+        cursor: initial;
+      }
+      &.complete,
+      &:hover {
+        background: $light-grayish-blue-lighter;
+        animation: none;
+      }
+    }
     .input {
       width: 100%;
-      padding: 1.2rem 0.3rem;
+      padding: 1.25rem 0.3rem;
       outline: 0;
       border: none;
       @include font-size-color-weight(
-        1.3rem,
+        1.2rem,
         $light-grayish-blue-superdark,
         $font-weight-light
       );
@@ -40,5 +53,16 @@
         font-size: 1rem;
       }
     }
+  }
+}
+
+@keyframes headerAni {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(0%);
+    opacity: 1;
   }
 }

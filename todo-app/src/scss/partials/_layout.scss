@@ -1,5 +1,5 @@
 @import './base';
-@import './todoHeader';
+@import './header';
 @import './todoList';
 @import './todoListItem';
 
@@ -25,8 +25,10 @@ input {
   min-height: 100vh;
   @include flex-d-a-j(column, center, flex-start);
   background: no-repeat url('../assets/bg-desktop-light.jpg');
-  // background-size: 100% 35%;
+  background-size: contain;
   background-color: $light-gray;
+
+  max-height: 100vh;
 }
 
 .container {
@@ -48,11 +50,36 @@ input {
     @include flex-d-a-j(row, center, center);
     border-radius: 50%;
     background-color: $light-grayish-blue-lighter;
+    transition: all 0.3s;
+    &.completed,
+    &:hover {
+      background: linear-gradient(
+        to right bottom,
+        hsl(192, 100%, 67%),
+        hsl(280, 87%, 65%)
+      );
+      animation: hoverAni 1s forwards;
+    }
     .check {
       width: 1.4rem;
       height: 1.4rem;
       border-radius: 50%;
       background-color: #fff;
+      cursor: pointer;
+      &.completed {
+        background: no-repeat url('../assets/icon-check.svg') 50% 50%;
+        background-size: 50%;
+        background-color: rgba(255, 255, 255, 0);
+      }
     }
+  }
+}
+
+@keyframes hoverAni {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
   }
 }
