@@ -7,6 +7,7 @@ interface TodoListProps {
   toggleTodo: ToggleTodo;
   removeTodo: RemoveTodo;
   clearComplete: ClearComplete;
+  theme: boolean;
 }
 
 const TodoList: React.FC<TodoListProps> = ({
@@ -14,6 +15,7 @@ const TodoList: React.FC<TodoListProps> = ({
   toggleTodo,
   removeTodo,
   clearComplete,
+  theme,
 }) => {
   const [filter, setFilter] = useState({
     active: false,
@@ -35,7 +37,7 @@ const TodoList: React.FC<TodoListProps> = ({
   }, [todos]);
 
   return (
-    <div className="list__container">
+    <div className={`list__container ${theme && 'dark'}`}>
       <div className="list">
         <ul>
           {todos.map((todo) => {
@@ -46,6 +48,7 @@ const TodoList: React.FC<TodoListProps> = ({
                 toggleTodo={toggleTodo}
                 removeTodo={removeTodo}
                 filter={filter}
+                theme={theme}
               />
             );
           })}
@@ -54,7 +57,7 @@ const TodoList: React.FC<TodoListProps> = ({
       {todos.length > 0 && (
         <div className="list__navs">
           <p className="list__navs__count">
-            {activeCount} {activeCount === 1 ? 'item left' : 'items left'}
+            {activeCount} {activeCount <= 1 ? 'item left' : 'items left'}
           </p>
           <div className="list__navs__filter">
             <p

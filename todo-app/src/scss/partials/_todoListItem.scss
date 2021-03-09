@@ -4,6 +4,20 @@
   width: 100%;
   padding: 0.3rem 0;
   border-bottom: 1.5px solid $light-grayish-blue-lighter;
+  background-color: #fff;
+  &.dark {
+    border-bottom: 1.5px solid $dark-grayish-blue-superdark;
+    background-color: $dark-desaturated-blue;
+    label {
+      .item__text {
+        color: $dark-grayish-blue-lighter;
+        &.completed {
+          color: $dark-grayish-blue-dark;
+          text-decoration: line-through $dark-grayish-blue-dark;
+        }
+      }
+    }
+  }
   label {
     @include flex-d-a-j(row, center, space-between);
     .item__text {

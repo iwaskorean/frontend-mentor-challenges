@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
-import { AddTodo } from './types/types';
+import { AddTodo, ToggleTheme } from './types/types';
 // scss
 
 interface AddTodoProps {
   addTodo: AddTodo;
+  toggleTheme: ToggleTheme;
+  theme: boolean;
 }
 
-const TodoHeader: React.FC<AddTodoProps> = ({ addTodo }) => {
+const TodoHeader: React.FC<AddTodoProps> = ({
+  addTodo,
+  toggleTheme,
+  theme,
+}) => {
   const [newTodo, setNewTodo] = useState('');
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -22,19 +28,24 @@ const TodoHeader: React.FC<AddTodoProps> = ({ addTodo }) => {
     <div className="header">
       <div className="header__heading">
         <p>Todo</p>
-        <img className="icon--daypart" src="./assets/icon-moon.svg" alt="" />
+        <img
+          className="icon--daypart"
+          src={`./assets/icon-${!theme ? 'moon' : 'sun'}.svg`}
+          alt=""
+          onClick={() => toggleTheme()}
+        />
       </div>
       <form className="header__form" onSubmit={(e) => onSubmit(e)}>
-        <div className="checkbox__container">
+        <div className={`checkbox__container ${theme && 'dark'}`}>
           <div className="checkbox">
             <div className="check"></div>
           </div>
         </div>
         <input
-          className="input"
+          className={`input ${theme && 'dark'}`}
           type="text"
           value={newTodo}
-          placeholder="Enter new things to do ..."
+          placeholder="Create a new to do ..."
           onChange={(e) => setNewTodo(e.target.value)}
         />
       </form>

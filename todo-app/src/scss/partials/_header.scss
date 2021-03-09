@@ -4,6 +4,9 @@
   width: 100%;
   @include flex-d-a-j(column, center, center);
   animation: headerAni 0.8s forwards;
+  @media (max-width: 768px) {
+    animation: none;
+  }
 
   .header__heading {
     width: 100%;
@@ -17,6 +20,10 @@
     .icon--daypart {
       width: 1.7rem;
       cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        transform: rotate(-20deg);
+      }
     }
   }
 
@@ -38,19 +45,29 @@
     .input {
       width: 100%;
       padding: 1.25rem 0.3rem;
+      @media (max-width: 1024px) {
+        padding: 1.2rem 0.3rem;
+      }
       outline: 0;
       border: none;
+      background-color: #fff;
       @include font-size-color-weight(
         1.2rem,
         $light-grayish-blue-superdark,
         $font-weight-light
       );
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
+
       &::placeholder {
         color: $light-grayish-blue;
         font-style: italic;
         font-size: 1rem;
+      }
+      &.dark {
+        background-color: $dark-desaturated-blue;
+        color: $dark-grayish-blue-lighter;
+        &::placeholder {
+          color: $dark-grayish-blue;
+        }
       }
     }
   }
@@ -62,7 +79,7 @@
     opacity: 0;
   }
   to {
-    transform: scaleX(0%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }

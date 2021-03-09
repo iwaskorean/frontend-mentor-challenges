@@ -7,16 +7,63 @@
   width: 100%;
   border-radius: 5px;
   animation: listAni 0.5s forwards;
+  @media (max-width: 768px) {
+    animation: none;
+  }
+  &.dark {
+    background-color: $dark-desaturated-blue;
+    box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.918);
+    .list {
+      &::-webkit-scrollbar-track {
+        background-color: $dark-desaturated-blue;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $dark-grayish-blue;
+      }
+    }
+    .list__navs {
+      background-color: $dark-desaturated-blue;
+      & > * {
+        @include font-size-color-weight(
+          0.9rem,
+          $dark-grayish-blue,
+          $font-weight-light
+        );
+      }
+      .nav {
+        &:hover {
+          color: $dark-grayish-blue-hover;
+        }
+      }
+    }
+  }
 
   .list {
     max-height: 50vh;
+    @media (max-width: 1024x) {
+      max-height: 45vh;
+    }
     list-style: none;
     overflow-y: scroll;
+    transition: all 0.5s;
+    &::-webkit-scrollbar {
+      width: 1rem;
+      border: none;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: rgba(255, 255, 255, 1);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $light-grayish-blue-lighter;
+    }
+    &::-webkit-scrollbar-button {
+      display: none;
+    }
   }
-
   .list__navs {
     width: 100%;
     background-color: #fff;
+    padding: 0 0.5rem;
     @include flex-d-a-j(row, center, space-between);
     flex-wrap: wrap;
     border-bottom-left-radius: 5px;
@@ -44,6 +91,14 @@
     }
     .list__navs__filter {
       @include flex-d-a-j(row, center, space-between);
+      @media (max-width: 1024px) {
+        width: 100%;
+        order: 10;
+        @include flex-d-a-j(row, center, center);
+        .nav {
+          margin: 0 2rem;
+        }
+      }
       .nav {
         margin: 0 0.3rem;
         font-weight: $font-weight-bold;

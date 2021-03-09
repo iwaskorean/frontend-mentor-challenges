@@ -14,10 +14,20 @@ button,
 input {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
+  @media (max-width: 1000px) {
+    font-size: 15px;
+  }
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 }
 
 input {
   font-size: 1.3rem;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 .wrapper {
@@ -27,20 +37,50 @@ input {
   background: no-repeat url('../assets/bg-desktop-light.jpg');
   background-size: contain;
   background-color: $light-gray;
-
   max-height: 100vh;
+  transition: all 0.5s;
+  @media (max-width: 768px) {
+    background: no-repeat url('../assets/bg-mobile-light.jpg');
+    background-size: 100% 40%;
+    background-color: $light-gray;
+  }
+  &.dark {
+    background: no-repeat url('../assets/bg-desktop-dark.jpg');
+    background-size: contain;
+    background-color: $dark-blue;
+    @media (max-width: 768px) {
+      background: no-repeat url('../assets/bg-mobile-dark.jpg');
+      background-size: 100% 40%;
+      background-color: $dark-blue;
+    }
+  }
 }
 
 .container {
   width: 40%;
   @include flex-d-a-j(column, center, flex-start);
   margin: 3rem;
+  @media (max-width: 768px) {
+    width: 75%;
+    margin-top: 5rem;
+  }
+  @media (max-width: 500px) {
+    width: 90%;
+  }
 }
 
 .checkbox__container {
   width: 3.7rem;
   height: 3.7rem;
   background-color: #fff;
+  &.dark {
+    background-color: $dark-desaturated-blue;
+    .checkbox {
+      .check {
+        background-color: $dark-desaturated-blue;
+      }
+    }
+  }
   @include flex-d-a-j(row, center, center);
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;

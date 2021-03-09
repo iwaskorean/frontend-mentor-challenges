@@ -7,6 +7,7 @@ import {
   ToggleTodo,
   RemoveTodo,
   ClearComplete,
+  ToggleTheme,
 } from './types/types';
 
 // scss
@@ -37,6 +38,11 @@ const initialTodos: Array<Todo> = [
 
 const App: React.FC = () => {
   const [todos, setTodos] = useState(initialTodos);
+  const [theme, setTheme] = useState(false);
+
+  const toggleTheme: ToggleTheme = () => {
+    setTheme(!theme);
+  };
 
   const toggleTodo: ToggleTodo = (selected) => {
     const newTodo = todos.map((todo) => {
@@ -71,14 +77,16 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="wrapper">
+    // <div className="wrapper">
+    <div className={`wrapper ${theme && 'dark'}`}>
       <div className="container">
-        <Header addTodo={addTodo} />
+        <Header addTodo={addTodo} theme={theme} toggleTheme={toggleTheme} />
         <TodoList
           todos={todos}
           toggleTodo={toggleTodo}
           removeTodo={removeTodo}
           clearComplete={clearComplete}
+          theme={theme}
         />
       </div>
     </div>

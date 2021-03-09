@@ -6,6 +6,7 @@ interface TodoListItemProps {
   toggleTodo: ToggleTodo;
   removeTodo: RemoveTodo;
   filter: Filter;
+  theme: boolean;
 }
 
 const TodoListItem: React.FC<TodoListItemProps> = ({
@@ -13,11 +14,12 @@ const TodoListItem: React.FC<TodoListItemProps> = ({
   toggleTodo,
   removeTodo,
   filter,
+  theme,
 }) => {
   const renderedItem = (
-    <li className="item">
+    <li className={`item ${theme && 'dark'}`}>
       <label>
-        <div className="checkbox__container">
+        <div className={`checkbox__container ${theme && 'dark'}`}>
           <div
             className={todo.complete ? 'checkbox completed' : 'checkbox'}
             onClick={() => toggleTodo(todo)}
