@@ -4,7 +4,7 @@
 
 ****
 
-​	📋 My Submissions 
+​	📋 **[My Submissions](https://projects-page.vercel.app/)**
 
 | Name                         |           Tech           |                          Live Site                           |
 | ---------------------------- | :----------------------: | :----------------------------------------------------------: |
@@ -17,9 +17,8 @@
 | Manage Landing Page          | React, Styled-components |  *[URL](https://manage-landing-page-chi-seven.vercel.app)*   |
 | Clock App                    |    React, SCSS, APIs     |         *[URL](https://clock-app-self.vercel.app/)*          |
 | Todo App                     |     React, TS, SCSS      |         *[URL](https://todo-app-livid.vercel.app/)*          |
-|                              |                          |                                                              |
 
 
 
-* You can grap this challenge [HERE!](https://www.frontendmentor.io/challenges)
+* You can grap this challenge [*here*](https://www.frontendmentor.io/challenges)!
 
